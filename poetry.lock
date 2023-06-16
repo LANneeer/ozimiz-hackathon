@@ -30,6 +30,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-sass-processor"
+version = "1.2.2"
+description = "SASS processor to compile SCSS files into *.css, while rendering, or offline."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+management-command = ["django-compressor (>=2.4)"]
+
+[[package]]
 name = "dotenv"
 version = "0.0.5"
 description = "Handle .env files"
@@ -96,7 +107,7 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "8ea0cfa96016f0b0b2a1dbdb9a995a86c93ff90377f3e0616fdf7f77e988926f"
+content-hash = "3b7da8b7519eb40222d92a807db0881a0949a6557d38c3de7ff5db33ecf44a84"
 
 [metadata.files]
 asgiref = [
@@ -106,6 +117,10 @@ asgiref = [
 django = [
     {file = "Django-4.2.2-py3-none-any.whl", hash = "sha256:672b3fa81e1f853bb58be1b51754108ab4ffa12a77c06db86aa8df9ed0c46fe5"},
     {file = "Django-4.2.2.tar.gz", hash = "sha256:2a6b6fbff5b59dd07bef10bcb019bee2ea97a30b2a656d51346596724324badf"},
+]
+django-sass-processor = [
+    {file = "django-sass-processor-1.2.2.tar.gz", hash = "sha256:f6098c181cc95a21593df6bb502791e32015615222803de216fdcc8bb42c0f77"},
+    {file = "django_sass_processor-1.2.2-py3-none-any.whl", hash = "sha256:d5e2970228ec9648da83d083a2b468fa682bef80357d0bab8e3f6c6df301681e"},
 ]
 dotenv = [
     {file = "dotenv-0.0.5.tar.gz", hash = "sha256:b58d2ab3f83dbd4f8a362b21158a606bee87317a9444485566b3c8f0af847091"},
