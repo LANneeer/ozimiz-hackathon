@@ -20,10 +20,11 @@ from courses import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("courses/", views.courses, name="home"),
+    path("courses/", views.courses, name="courses"),
     path("courses/<int:pk>/", views.course_detail, name="course_detail"),
     path("courses/<int:pk>/edit/", views.course_edit, name="course_edit"),
     path("courses/<int:pk>/complete/", views.course_complete, name="course_complete"),
     path("register/", views.register, name="register"),
-    path("login/", views.login_view, name="login")
+    path("login/", views.login_view, name="login"),
+    path("", views.index, name="home")
 ]

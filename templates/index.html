@@ -1,0 +1,32 @@
+<!-- index.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Ozimiz.kaz</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'courses' %}">Courses</a></li>
+          <li><a href="{% url 'register' %}">Registration</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Get started with our courses</h2>
+      <p>Choose from a variety of courses to enhance your skills and knowledge.</p>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2023 MySite. All rights reserved.</p>
+  </footer>
+</body>
+</html>

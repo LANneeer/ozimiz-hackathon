@@ -11,6 +11,10 @@ from .models import Course
 from .models import CourseCompletion
 
 
+def index(request):
+    return render(request, BASE_DIR / 'templates/index.html')
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -44,7 +48,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')  # Redirect to the courses page after login
+                return redirect('courses')  # Redirect to the courses page after login
     else:
         form = AuthenticationForm()
 
@@ -54,7 +58,7 @@ def login_view(request):
 def courses(request):
     courses = Course.objects.filter(students=request.user)
     context = {'courses': courses}
-    return render(request, BASE_DIR / 'templates/home.html', context)
+    return render(request, BASE_DIR / 'templates/courses.html', context)
 
 
 @login_required
