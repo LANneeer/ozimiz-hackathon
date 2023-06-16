@@ -54,11 +54,30 @@ class Course(TimestampModel):
         null=True
     )
     students = models.ManyToManyField(
-        to=User
+        to=User,
+        blank=True,
+        null=True
+    )
+    completed_by = models.ManyToManyField(
+        to=User,
+        through='CourseCompletion',
+        related_name='completed_courses'
     )
 
     class Meta:
         verbose_name = 'Курс'
         verbose_name_plural = 'Курсы'
         ordering = ('title',)
+
+
+class CourseCompletion(models.Model):
+    user = models.ForeignKey(
+        to=User,
+        on_delete=models.CASCADE
+    )
+    course = models.ForeignKey(
+        to=Course,
+        on_delete=models.CASCADE
+    )
+    completed_at = models.DateTimeField(auto_now_add=True)
 

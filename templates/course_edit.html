@@ -1,0 +1,18 @@
+<!-- course_edit.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Course</title>
+  <link rel="stylesheet" href="{% static 'css/course_edit.css' %}">
+</head>
+<body>
+  <h1>Edit Course</h1>
+
+  <form method="POST" class="course-edit-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+  </form>
+</body>
+</html>

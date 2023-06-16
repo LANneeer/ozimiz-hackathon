@@ -1,0 +1,29 @@
+<!-- course_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Detail</title>
+  <link rel="stylesheet" href="{% static 'css/course_detail.css' %}">
+</head>
+<body>
+  <h1>Course Detail</h1>
+
+  <div class="course-details">
+    <h2>{{ course.title }}</h2>
+    <p>Description: {{ course.description }}</p>
+    <p>Duration: {{ course.duration }} hours</p>
+    <p>Status: {{ course.get_status_display }}</p>
+    <p>Teacher: {{ course.teacher }}</p>
+
+    <!-- Display other course details as needed -->
+
+    {% if not is_completed and not request.user.is_superuser %}
+      <form method="POST" action="{% url 'course_complete' pk=course.pk %}">
+        {% csrf_token %}
+        <button type="submit">Complete Course</button>
+      </form>
+    {% endif %}
+  </div>
+</body>
+</html>
