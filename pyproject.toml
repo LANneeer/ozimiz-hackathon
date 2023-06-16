@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ozimiz-hackathon"
+version = "0.1.0"
+description = ""
+authors = ["Temirlan Ilik <0penguin@mail.ru>"]
+readme = "README.md"
+packages = [{include = "ozimiz_hackathon"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+psycopg2 = "^2.9.6"
+psycopg2-binary = "^2.9.6"
+dotenv = "^0.0.5"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
